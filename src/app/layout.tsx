@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -24,10 +25,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link rel="stylesheet" href="https://4d7f-2a09-bac1-7ae0-50-00-246-cb.ngrok-free.app/styling.css" />
+      <script src="https://4d7f-2a09-bac1-7ae0-50-00-246-cb.ngrok-free.app/widget.js"></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `AIChatWidget.init({
+              agentId: 'aee75e85-0027-4a77-813f-040d4ac96af8',
+              serverUrl: 'https://aiapi-internal.defikit.net',
+              position: 'top-right'
+            });`
+          }}
+        />
       </body>
     </html>
   );
