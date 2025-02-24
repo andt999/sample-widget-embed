@@ -38,6 +38,7 @@ export default function RootLayout({
             __html: `AIChatWidget.init({
               agentId: 'aee75e85-0027-4a77-813f-040d4ac96af8',
               serverUrl: 'https://aiapi-internal.defikit.net',
+              widgetUrl: 'https://ai-cms.alex-defikit.workers.dev',
               position: 'bottom-right'
             });`
           }}
